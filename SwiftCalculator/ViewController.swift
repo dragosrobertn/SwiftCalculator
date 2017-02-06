@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
     
     func updateDisplay(number: String){
-//        if calcState == CalculationState.newNumStarted {
+        if calcState == CalculationState.newNumStarted {
 //            if let num = resultLabel.text {
 //                if num != "" {
 //                    firstValue = num
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
 //        }
 //        else if calcState == CalculationState.enterinNum {
 //            resultLabel.text = resultLabel.text! + number
-//        }
+        }
     }
 
 
