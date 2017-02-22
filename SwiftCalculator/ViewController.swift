@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     
     var firstValue : String = ""
 
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,41 +29,73 @@ class ViewController: UIViewController {
     }
     
     @IBAction func numberClicked(sender: UIButton) {
-        //updateDisplay(String(sender.tag))
+        updateDisplay(number: String(sender.tag))
     }
     
     @IBAction func operatorClicked(sender: UIButton) {
+        
+        if let num = resultLabel.text {
+            if num != "" {
+                firstValue = num
+                resultLabel.text = ""
+            }
+        }
+        
         switch sender.tag {
         case 10:
-            print ("Add")
+            currentOperation = Operator.add
         case 11:
-            print ("Substract")
+            currentOperation = Operator.substract
         case 12:
-            print ("Multiply")
+            currentOperation = Operator.multiply
         case 13:
-            print ("Divide")
+            currentOperation = Operator.divide
         default:
             return
         }
     }
     
     @IBAction func equalsClicked(sender: UIButton) {
-        
+        calculateResult()
     }
     
     func updateDisplay(number: String){
         if calcState == CalculationState.newNumStarted {
-//            if let num = resultLabel.text {
-//                if num != "" {
-//                    firstValue = num
-//                }
-//            }
-//            calcState = CalculationState.enterinNum
-//            resultLabel.text = number
-//        }
-//        else if calcState == CalculationState.enterinNum {
-//            resultLabel.text = resultLabel.text! + number
+            if let num = resultLabel.text {
+                if num != "" {
+                    firstValue = num
+                }
+                calcState = CalculationState.enterinNum
+                resultLabel.text = number
+            }
+            else if calcState == CalculationState.enterinNum {
+                resultLabel.text = resultLabel.text! + number
+            }
         }
+    }
+    
+    func calculateResult() {
+        if (firstValue.isEmpty){
+            return
+        }
+        
+        var result = ""
+        
+        switch currentOperation {
+        case Operator.add:
+            result = "\(Double(firstValue)! + Double(resultLabel.text!)!)"
+        case Operator.substract:
+            result = "\(Double(firstValue)! - Double(resultLabel.text!)!)"
+        case Operator.multiply:
+            result = "\(Double(firstValue)! * Double(resultLabel.text!)!)"
+        case Operator.divide:
+            result = "\(Double(firstValue)! / Double(resultLabel.text!)!)"
+        default:
+            return
+        }
+        
+        resultLabel.text = result
+        calcState = CalculationState.newNumStarted
     }
 
 
