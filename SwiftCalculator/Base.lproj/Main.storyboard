@@ -27,7 +27,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WiG-Ws-r2a">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="65"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtY-Tf-A8O">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtY-Tf-A8O">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="65"/>
                                                 <color key="backgroundColor" red="0.99686431880000004" green="0.99885892870000004" blue="0.33301112059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
