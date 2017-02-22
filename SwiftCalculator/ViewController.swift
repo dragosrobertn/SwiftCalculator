@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         if let num = resultLabel.text {
             if num != "" {
                 firstValue = num
-                resultLabel.text = ""
+//                resultLabel.text = ""
             }
         }
         
@@ -53,6 +53,7 @@ class ViewController: UIViewController {
         default:
             return
         }
+        
     }
     
     @IBAction func equalsClicked(sender: UIButton) {
