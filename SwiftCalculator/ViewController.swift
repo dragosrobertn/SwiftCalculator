@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         if let num = resultLabel.text {
             if num != "" {
                 firstValue = num
-//                resultLabel.text = ""
+                resultLabel.text = ""
             }
         }
         
@@ -66,13 +66,14 @@ class ViewController: UIViewController {
                 if num != "" {
                     firstValue = num
                 }
-                calcState = CalculationState.enterinNum
+                calcState = CalculationState.enteringNum
                 resultLabel.text = number
             }
-            else if calcState == CalculationState.enterinNum {
-                resultLabel.text = resultLabel.text! + number
-            }
         }
+        else if calcState == CalculationState.enteringNum {
+            resultLabel.text = resultLabel.text! + number
+        }
+
     }
     
     func calculateResult() {

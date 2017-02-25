@@ -17,6 +17,6 @@ enum Operator: String {
 }
 
 enum CalculationState : String {
-    case enterinNum = "enteringNum"
+    case enteringNum = "enteringNum"
     case newNumStarted = "newNumStarted"
 }
